@@ -1,0 +1,20 @@
+{
+    "20": "FedEx Express Saver®",
+    "39": "FedEx First Overnight Freight",
+    "49": "FedEx 2Day®AM",
+    "70": "FedEx 1Day Freight",
+    "80": "FedEx 2Day®Freight",
+    "83": "FedEx 3Day®Freight",
+    "90": "FedEx Home Delivery®",
+    "92": "FedEx Ground®",
+    "111": "FedEx Freight®",
+    "112": "FedEx Freight®Priority",
+    "113": "FedEx Freight®Economy",
+    "01": "FedEx Priority Overnight®",
+    "03": "FedEx 2Day® ",
+    "05": "FedEx Standard Overnight®",
+    "06": "FedEx First Overnight®",
+    "E1": "Extra Hours Priority Overnight",
+    "E5": "Extra Hours Standard Overnight",
+    "E6": "Extra Hours First Overnight"
+}

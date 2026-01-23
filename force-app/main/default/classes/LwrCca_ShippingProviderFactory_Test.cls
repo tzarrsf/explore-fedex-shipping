@@ -18,6 +18,7 @@ public class LwrCca_ShippingProviderFactory_Test {
     }
 
     private static LwrCca_ShippingMetaData createShippingMetaData(String providerClass) {
+        System.debug('Creating Shipping MetaData with provider class: ' + providerClass);
         LwrCca_ShippingMetaData LwrCca_ShippingMetaData = new LwrCca_ShippingMetaData();
         LwrCca_ShippingMetaData.providerImplClass = providerClass;
         return LwrCca_ShippingMetaData;
