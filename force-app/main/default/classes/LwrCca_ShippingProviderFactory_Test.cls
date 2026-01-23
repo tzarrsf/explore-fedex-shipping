@@ -3,7 +3,7 @@
  * @author            : Tom Zarr
  * @group             : Salesforce Commerce Partner Delivery Success (2024)
  * @last modified on  : 01-23-2026
- * @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+ * @last modified by  : Tom Zarr
 **/
 @isTest
 public class LwrCca_ShippingProviderFactory_Test {

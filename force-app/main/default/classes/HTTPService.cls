@@ -1,3 +1,10 @@
+/**
+ * @description       : 
+ * @author            : Tom Zarr
+ * @group             : 
+ * @last modified on  : 01-23-2026
+ * @last modified by  : Tom Zarr
+**/
 public virtual class HTTPService {
     public HTTPService() {
     }
