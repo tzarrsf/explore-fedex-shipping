@@ -24,7 +24,7 @@ There are various points where this implementation can be extended to achieve pr
     - Can add more fields to both the meta data types Shipping Provider & HTTP Service
   - Code
      - Following classes can be extended , details are available under respective item number
-      - ShippingCartCalculatorExtension
+      - LwrCca_CartCalcShippingExtension
       - LwrCca_AbstractShippingProvider
       - HTTPService
 

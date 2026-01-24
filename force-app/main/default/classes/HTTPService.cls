@@ -1,8 +1,8 @@
 /**
- * @description       : 
+ * @description       : This class is used to make a REST based callout. Currently supporting only JSON as data format.
  * @author            : Tom Zarr
- * @group             : 
- * @last modified on  : 01-23-2026
+ * @group             : Salesforce Commerce Partner Delivery Success (2024)
+ * @last modified on  : 01-24-2026
  * @last modified by  : Tom Zarr
 **/
 public virtual class HTTPService {

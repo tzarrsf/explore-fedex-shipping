@@ -1,8 +1,9 @@
 /**
- * @description       : This code... [Fill in the rest!]
+ * @description       : This class provides common functionality to prepare a shipping request and should be further extended
+ *                      by a specific shipping providers like UPS or FedEx.
  * @author            : Tom Zarr
- * @group             : Salesforce Commerce Partner Delivery Success (2024)
- * @last modified on  : 01-23-2026
+ * @group             : Salesforce Commerce Partner Delivery Success (2026)
+ * @last modified on  : 01-24-2026
  * @last modified by  : Tom Zarr
 **/
 public abstract class LwrCca_AbstractShippingProvider {

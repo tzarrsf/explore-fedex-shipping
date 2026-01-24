@@ -2,7 +2,7 @@
  * @description       : This code... [Fill in the rest!]
  * @author            : Tom Zarr
  * @group             : Salesforce Commerce Partner Delivery Success (2024)
- * @last modified on  : 12-15-2024
+ * @last modified on  : 01-24-2026
  * @last modified by  : Tom Zarr
 **/
 @isTest
@@ -16,9 +16,9 @@ public class LwrCca_ShippingInternalProvider_Test {
         WebCart cart = new WebCart(Name='Cart', WebStoreId=webStore.Id, AccountId=account.Id);
         insert cart;
     }
-   
+
     @isTest
-    static void testretrieveShippingRates(){
+    static void testretrieveShippingRates() {
         LwrCca_ShippingProviderRequest shippingRequest = shipProviderRequest();
         Test.startTest();
         LwrCca_ShippingInternalProvider internalShip = new LwrCca_ShippingInternalProvider();
@@ -26,10 +26,10 @@ public class LwrCca_ShippingInternalProvider_Test {
          System.assertNotEquals(null, response, 'Response should not be null');
 
         Test.stopTest();
-        
     }
+
     @isTest
-    static void testgetShippingOptionsFromResponse(){
+    static void testgetShippingOptionsFromResponse() {
         LwrCca_ShippingProviderRequest shippingRequest = shipProviderRequest();
         List<String> responseList = new List<String>();
         Test.startTest();
@@ -38,19 +38,20 @@ public class LwrCca_ShippingInternalProvider_Test {
                 System.assertNotEquals(null, response, 'Response should not be null');
 
         Test.stopTest();
-        
     }
+
     @isTest
-    static void testprepareRequestBody(){
+    static void testprepareRequestBody() {
         LwrCca_ShippingProviderRequest shippingRequest = shipProviderRequest();
         Map<String, String> callOutRequest = new Map<String, String>();
         Test.startTest();
         LwrCca_ShippingInternalProvider internalShip = new LwrCca_ShippingInternalProvider();
         internalShip.prepareRequestBody(shippingRequest,callOutRequest);
         Test.stopTest();
-        
+
     }
-    private static LwrCca_ShippingProviderRequest  shipProviderRequest(){
+
+    private static LwrCca_ShippingProviderRequest  shipProviderRequest() {
         WebCart webCart = [SELECT Id FROM WebCart WHERE Name = 'Cart' LIMIT 1];
         LwrCca_ShippingProviderRequest shipProvider = new LwrCca_ShippingProviderRequest();
          LwrCca_ShippingMetaData shipmeta = new LwrCca_ShippingMetaData();
@@ -89,13 +90,13 @@ public class LwrCca_ShippingInternalProvider_Test {
         shipmeta.namedCredentials= 'TestCredentials';
         return shipProvider;
     }
+
     public static Shipping_Provider__mdt getCustomMetadataRecord() {
         Shipping_Provider__mdt testShipProvider = new Shipping_Provider__mdt(
             Context_Name__c = 'Training',
             Context_Locale__c = 'en_US',
             Impl_Class__c = 'LwrCca_ShippingInternalProvider'
-      		); 
+      		);
         	return testShipProvider;
     }
-
 }
