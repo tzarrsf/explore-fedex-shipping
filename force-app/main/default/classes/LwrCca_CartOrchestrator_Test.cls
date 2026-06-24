@@ -238,17 +238,20 @@ global class LwrCca_CartOrchestrator_Test {
 
     private static void assertNoCartValidationOutputs(CartExtension.Cart cart) {
         CartExtension.CartValidationOutputList cartValidationOutputs = cart.getCartValidationOutputs();
+        System.debug('cartValidationOutputs.size(): ' + cartValidationOutputs.size());
         Assert.areEqual(0, cartValidationOutputs.size());
     }
 
     private static void assertExpectedCalculations(CartExtension.Cart cart, List<String> expectedCalculations) {
         for (String calculationTag: expectedCalculations) {
+            System.debug('calculationTag: ' + calculationTag);
             Assert.isTrue(cart.getName().contains(calculationTag));
         }
     }
 
     private static void assertUnexpectedCalculations(CartExtension.Cart cart, List<String> unexpectedCalculations) {
         for (String calculationTag: unexpectedCalculations) {
+            System.debug('calculationTag: ' + calculationTag);
             Assert.isFalse(cart.getName().contains(calculationTag));
         }
     }

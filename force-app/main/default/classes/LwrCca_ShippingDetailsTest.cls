@@ -2,17 +2,17 @@
  * @description       : This code... [Fill in the rest!]
  * @author            : Tom Zarr
  * @group             : Salesforce Commerce Partner Delivery Success (2024)
- * @last modified on  : 12-14-2024
+ * @last modified on  : 05-12-2026
  * @last modified by  : Tom Zarr
 **/
 @isTest
 public class LwrCca_ShippingDetailsTest {
-    
+
     @testSetup
     static void setup(){
         Account account = new Account(Name='TestAccount');
         insert account;
-        WebStore webStore = new WebStore(Name='Training', SupportedLanguages='en_US', DefaultLanguage='en_US');
+        WebStore webStore = new WebStore(Name='B2B Store', SupportedLanguages='en_US', DefaultLanguage='en_US');
         insert webStore;
         WebCart cart = new WebCart(Name='Cart', WebStoreId=webStore.Id, AccountId=account.Id);
         insert cart;
@@ -20,7 +20,7 @@ public class LwrCca_ShippingDetailsTest {
 
     @isTest
     public static void getMetaDataDTOTest(){
-        WebStore store = [Select id, Name from WebStore where Name = 'Training' Limit 1];
+        WebStore store = [Select id, Name from WebStore where Name = 'B2B Store' Limit 1];
         Shipping_Provider__mdt ship = getCustomMetadataRecord();
         List<LwrCca_ShippingMetaData> shipproviderList = new List<LwrCca_ShippingMetaData>();
         String currentLocale = UserInfo.getlocale();
@@ -46,7 +46,7 @@ public class LwrCca_ShippingDetailsTest {
         Test.startTest();
         List<LwrCca_ShippingMetaData> result = LwrCca_ShippingDetails.getMetaDataDTO(store.Id);
         Test.stopTest();
-        
+
         // Assertions
         System.assertEquals(result[0].maxPackageWeight,null);
         System.assertEquals(result[0].minPackageWeight,null);
@@ -67,7 +67,7 @@ public class LwrCca_ShippingDetailsTest {
             Context_Name__c = 'Training',
             Context_Locale__c = 'en_US',
             Impl_Class__c = 'LwrCca_ShippingInternalProvider'
-        ); 
+        );
         return testShipProvider;
     }
 

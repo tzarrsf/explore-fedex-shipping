@@ -13,7 +13,7 @@
  *
  * @author            : Tom Zarr
  * @group             : Salesforce Commerce Partner Delivery Success (2024)
- * @last modified on  : 03-27-2024
+ * @last modified on  : 01-24-2026
  * @last modified by  : Tom Zarr
 **/
 global class LwrCca_CartOrchestrator extends CartExtension.CartCalculate
@@ -65,14 +65,12 @@ global class LwrCca_CartOrchestrator extends CartExtension.CartCalculate
          * Work in Progress - not used at the moment
          */
         if (runPromotions) {
-            /*
             System.debug('## runPromotions was true. Calling promotions(calculatorRequest)...');
             promotions(calculatorRequest);
 
             if (hasErrorLevelCartValidationOutput(cart.getCartValidationOutputs(), CartExtension.CartValidationOutputTypeEnum.PROMOTIONS)) {
                 return;
             }
-            */
         }
 
         if (runInventory) {
