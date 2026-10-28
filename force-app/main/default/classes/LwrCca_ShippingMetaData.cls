@@ -4,7 +4,7 @@
  * @group             : Salesforce Commerce Partner Delivery Success (2024)
  * @last modified on  : 01-23-2026
  * @last modified by  : Tom Zarr
-**/
+ **/
 public with sharing class LwrCca_ShippingMetaData {
   public ID id { get; set; }
   public String requestJSON { get; set; }
@@ -14,7 +14,7 @@ public with sharing class LwrCca_ShippingMetaData {
   public String accountNumber { get; set; }
   public Integer displayOrder { get; set; }
   public String carrier { get; set; }
-  public String shippinggMethodNames { get; set; }
+  public String shippingMethodNames { get; set; }
   public String endPoint { get; set; }
   public String httpMethod { get; set; }
   public String mockedResponse { get; set; }

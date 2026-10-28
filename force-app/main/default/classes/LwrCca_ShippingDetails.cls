@@ -4,13 +4,13 @@
  * @group             : Salesforce Commerce Partner Delivery Success (2026)
  * @last modified on  : 01-24-2026
  * @last modified by  : Tom Zarr
-**/
+ **/
 public with sharing class LwrCca_ShippingDetails {
-
   private static Map<String, List<LwrCca_ShippingMetaData>> shippingProviders = new Map<String, List<LwrCca_ShippingMetaData>>();
   private static List<Shipping_Provider__mdt> shippingProviderMDTs;
 
-  private LwrCca_ShippingDetails() {}
+  private LwrCca_ShippingDetails() {
+  }
 
   public static List<LwrCca_ShippingMetaData> getMetaDataDTO(String contextId) {
     List<LwrCca_ShippingMetaData> shippingMetaDataDTOs = new List<LwrCca_ShippingMetaData>();
@@ -49,7 +49,8 @@ public with sharing class LwrCca_ShippingDetails {
         FROM Shipping_Provider__mdt
         WHERE
           Context_Name__c = :webStoreName
-          AND Context_Locale__c = :currentLocale AND Is_Active__c = true 
+          AND Context_Locale__c = :currentLocale
+          AND Is_Active__c = TRUE
         ORDER BY Display_Order__c ASC NULLS LAST
       ];
       if (shippingProviderMDTs != null && shippingProviderMDTs.size() > 0) {
@@ -63,7 +64,7 @@ public with sharing class LwrCca_ShippingDetails {
           shippingMetaDataDTO.providerImplClass = shippingProviderMDT.Impl_Class__c;
           shippingMetaDataDTO.maxPackageWeight = shippingProviderMDT.Max_Weight_Threshold__c;
           shippingMetaDataDTO.minPackageWeight = shippingProviderMDT.Min_Weight_Threshold__c;
-          shippingMetaDataDTO.shippinggMethodNames = shippingProviderMDT.Shipping_Options__c;
+          shippingMetaDataDTO.shippingMethodNames = shippingProviderMDT.Shipping_Options__c;
           shippingMetaDataDTO.accountNumber = shippingProviderMDT.Account_Number__c;
           shippingMetaDataDTO.displayOrder = Integer.valueOf(
             shippingProviderMDT.Display_Order__c
@@ -84,7 +85,7 @@ public with sharing class LwrCca_ShippingDetails {
     return shippingMetaDataDTOs;
   }
 
-    public static List<Shipping_Provider__mdt> getMetaDataObject() {
-        return shippingProviderMDTs;
-    }
+  public static List<Shipping_Provider__mdt> getMetaDataObject() {
+    return shippingProviderMDTs;
+  }
 }
